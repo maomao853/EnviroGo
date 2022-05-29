@@ -1,0 +1,4 @@
+venv/
+*.HEIC
+__pycache__
+test.py
