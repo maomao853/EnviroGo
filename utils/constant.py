@@ -1,0 +1,15 @@
+# https://coolors.co/b8d8ba-d9dbbc-fcddbc-ef959d-69585f
+
+RED = "#EF959D"
+YELLOW = "#FCDDBC"
+LIGHT_GREEN = "#D9DBBC"
+DARK_GREEN = "#B8D8BA"
+GRAY = "#F0F0F0"
+WHITE = "#FFFFFF"
+SIDEBAR_GREEN = "#678556"
+
+COINS_PER_KM = 10
+
+XP_WALK = 20
+XP_BIKE = 10
+XP_DRIVE = 1
