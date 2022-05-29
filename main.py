@@ -3,12 +3,13 @@ import os
 import utils.latlong as ll
 from location import Location
 
-FILE_NAME = "testImage.jpg"
+HOME = "homeImage.jpg"
+DESTINATION = "testImage.jpg"
 
 global lat, long, datetime
 
 def main():
-    with open(os.path.join("resources", FILE_NAME), "rb") as image:
+    with open(os.path.join("resources", DESTINATION), "rb") as image:
         tags = ef.process_file(image)
         geo = {i:tags[i] for i in tags.keys() if i.startswith("GPS") or i.startswith("EXIF")}
 
