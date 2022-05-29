@@ -1,5 +1,17 @@
 from math import radians, cos, sin, asin, sqrt
 
+"""
+Computes the distance between two coordinate points
+
+    Parameters:
+        lat1 (float): Latitude of origin
+        lat2 (float): Longitude of destination
+        long1 (float): Latitude of origin
+        long2 (float): Longitude of destination
+
+    Returns:
+        dist (float): Distance from origin to destination (km)
+"""
 def getDistance(lat1, lat2, long1, long2):
     long1 = radians(long1)
     long2 = radians(long2)
@@ -8,14 +20,26 @@ def getDistance(lat1, lat2, long1, long2):
 
     dlong = long2 - long1
     dlat = lat2 - lat1
+
     a = sin(dlat / 2) ** 2 + cos(lat1) * cos(lat2) * sin(dlong / 2) ** 2
 
     c = 2 * asin(sqrt(a))
+    r = 6371    # Radius of earth in kilometers
 
-    r = 6371
+    dist = c * r
 
-    return(c * r)
+    return(dist)
 
+"""
+Converts lat/long from degree-minute-second to degree
+
+    Parameters:
+        latRaw (IfdTag): Latitude in degree-minute-second
+        longRaw (IfdTag): Longitude in degree-minute-second
+
+    Returns:
+        d (dict): Converted lat/long measurements (km)
+"""
 def toDegree(latRaw, longRaw):
     d = {}
 
@@ -30,6 +54,15 @@ def toDegree(latRaw, longRaw):
 
     return(d)
 
+"""
+Strips the coordinates down to degree-minute-second for lat/long
+
+    Parameters:
+        input (IfdTag): Coordinates in degree-minute-second
+
+    Returns:
+        d (dict): Stripped down coordinate (km)
+"""
 def _strip(input):
     d = {}
 
