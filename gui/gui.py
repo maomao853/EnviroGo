@@ -129,7 +129,7 @@ def select_file(origin):
         markerDest = map_widget.set_marker(destCoord["lat"], destCoord["long"], text="Destination")
 
 def popupUpload():
-    popupWindow = Toplevel(bg=constant.WHITE)
+    popupWindow = Toplevel(bg=constant.SIDEBAR_GREEN)
     popupWindow.title("Upload")
     popupWindow.geometry("400x400")
     popupWindow.attributes('-topmost', 'true')
@@ -386,7 +386,7 @@ image_1 = canvas.create_image(
 
 # avatar
 image_image_2 = PhotoImage(
-    file=relative_to_assets("image_2.png"))
+    file=relative_to_assets("avatar.png"))
 image_2 = canvas.create_image(
     646.574462890625,
     202,
